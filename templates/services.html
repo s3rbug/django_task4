@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "product.html" as template %}
+
+{% block title %}Послуги{% endblock %}
+{% block content %}
+    <div class="d-flex flex-wrap gap-5 justify-content-between">
+        {% for service in services %}
+            {{ template.service(
+                price=service.price,
+                name=service.name,
+                description=service.description) }}
+        {% endfor %}
+    </div>
+{% endblock %}

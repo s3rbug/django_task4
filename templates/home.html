@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% macro block(img_src, info) -%}
+    <div class="col d-flex flex-column align-items-center mt-5">
+        <img style="width: 50px; height: 50px" src="{{ img_src }}" class="d-flex" alt="icon">
+        <div class="fw-bold mb-3 mt-3 text-center w-100">{{ info.heading }}</div>
+        <ul class="list-group">
+            {% for data in info.data %}
+                <li class="list-group-item">{{ data }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{%- endmacro %}
+
+{% block content %}
+    <div>
+        <div class="container">
+            <div class="row">
+                <h2 class="col text-center fw-bold">
+                    <p class="d-inline border-bottom border-warning border-5">
+                        Ми пропонуємо
+                    </p>
+                </h2>
+            </div>
+            <div class="row">
+                {{ block(url_for('static', filename='img/graph-up-arrow.svg'),
+                 {
+                    "heading": "Автоматизація бізнесу",
+                    "data": [
+                        "аналіз бізнес-процесів",
+                        "автоматизація бухгалтерського, управлінського, податкового обліків",
+                        "надання доступу до хмарних сховищ",
+                        "продукти компанії Microsoft"
+                    ]
+                 }) }}
+                {{ block(url_for('static', filename='img/gear.svg'),
+                 {
+                    "heading": "Налаштування ПЗ",
+                    "data": [
+                        "первинне налаштування системи",
+                        "адміністрування",
+                        "налаштування інтерфейсів",
+                        "перенесення залишків з попередніх інформаційних баз"
+                    ]
+                 }) }}
+                {{ block(url_for('static', filename='img/headset.svg'),
+                 {
+                    "heading": "Підтримка",
+                    "data": [
+                        "консультації з користування ПЗ",
+                        "оновлення ПЗ",
+                        "резервне копіювання",
+                        "адміністрування комп’ютерних мереж та систем"
+                    ]
+                 }) }}
+                {{ block(url_for('static', filename='img/upc-scan.svg'),
+                 {
+                    "heading": "Підключення торговельного обладнання",
+                    "data": [
+                        "сканери штрихкодів",
+                        "реєстратори розрахункових операцій",
+                        "термінали збору даних",
+                        "електронні ваги"
+                    ]
+                 }) }}
+            </div>
+            <div class="row">
+                {{ block(url_for('static', filename='img/mortarboard.svg'),
+                 {
+                    "heading": "Навчання",
+                    "data": [
+                        "сертифіковані навчальні курси",
+                        "розробка інструкцій користувачів",
+                        "навчання персоналу",
+                    ]
+                 }) }}
+                {{ block(url_for('static', filename='img/code-square.svg'),
+                 {
+                    "heading": "Програмування",
+                    "data": [
+                        "автоматизація унікальних бізнес-процесів",
+                        "написання зовнішніх компонент для роботи з торговим обладнанням",
+                    ]
+                 }) }}
+                {{ block(url_for('static', filename='img/arrow-clockwise.svg'),
+                 {
+                    "heading": "Інтеграція різних облікових систем",
+                    "data": [
+                        "інтеграція облікових систем з інтернет-магазинами",
+                        "обмін даними з WEB-сайтом",
+                    ]
+                 }) }}
+                {{ block(url_for('static', filename='img/phone.svg'),
+                 {
+                    "heading": "Мобільні додатки",
+                    "data": [
+                        "розробка мобільних додатків",
+                        "налаштування мобільних додатків",
+                    ]
+                 }) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% import "product.html" as template %}
+{% block title %}Прайс-лист{% endblock %}
+
+{% block content %}
+    <div class="d-flex flex-wrap gap-5 justify-content-between">
+        {% for product in products %}
+            {{ template.product(
+                price=product.price,
+                count=product.count,
+                rating=product.rating,
+                name=product.name,
+                description=product.description) }}
+        {% endfor %}
+    </div>
+{% endblock %}

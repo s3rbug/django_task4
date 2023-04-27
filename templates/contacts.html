@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Контакти{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-center ms-4">
+        <ul class="list-group d-inline-block">
+            <h2 class="d-flex justify-content-center mb-3">Контакти</h2>
+            <li class="list-group-item">Адреса: {{ address }}</li>
+            <li class="list-group-item">Електронна адреса: {{ email }} </li>
+            <li class="list-group-item">
+                <a href="{{ facebook_url }}">Facebook</a>
+            </li>
+            <li class="list-group-item">
+                <a href="{{ telegram_url }}">Telegram</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
